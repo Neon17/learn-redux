@@ -1,6 +1,5 @@
 import store from "./store.js";
-import * as actions from "./actionTypes";
-import { bugAdded, bugRemoved } from "./actions.js";
+import { bugAdded, bugRemoved, bugResolved } from "./actions.js";
 
 console.log(store);
 
@@ -14,5 +13,9 @@ store.dispatch(bugAdded("Bug 1"));
 
 unsubscribe();
 
-store.dispatch(bugRemoved(1));
+// store.dispatch(bugRemoved(1));
+
+store.dispatch(bugResolved(1));
+
+console.log(store.getState());
 

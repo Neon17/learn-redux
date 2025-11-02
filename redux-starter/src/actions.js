@@ -1,5 +1,5 @@
 // this is action creator
-import * as actions from "./actionTypes";
+import * as actions from "./actionTypes.js";
 
 export const bugAdded = (description) => ({
     type: actions.BUG_ADDED,
@@ -10,6 +10,13 @@ export const bugAdded = (description) => ({
 
 export const bugRemoved = (id) => ({
     type: actions.BUG_REMOVED,
+    payload: {
+        id: id
+    }
+})
+
+export const bugResolved = (id) => ({
+    type: actions.BUG_RESOLVED,
     payload: {
         id: id
     }
