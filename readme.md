@@ -9,5 +9,6 @@ Redux use functional programming. We can learn this functional programming from 
   -  [functions_immutability.js](/prerequisites/functions_immutability.js)
   -  [libraries](/prerequisites//libraries.js)
   
--  
+- Then we can continue exploring redux-starter folder
+  - 
 
