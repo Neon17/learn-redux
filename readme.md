@@ -10,5 +10,9 @@ Redux use functional programming. We can learn this functional programming from 
   -  [libraries](/prerequisites//libraries.js)
   
 - Then we can continue exploring redux-starter folder
-  - 
+  - [redx-starter](/redux-starter/)
+  - [reduxToolkitTodo](/reduxToolkitTodo/)
+  - [redux-essentials-part2-docs](/redux-essentials-part2/)
+
+
 
