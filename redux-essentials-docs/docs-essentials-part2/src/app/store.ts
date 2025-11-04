@@ -9,7 +9,7 @@ export const store = configureStore({
         counter: counterReducer
     }
 });
-
+;
 // Infer the type of `store`
 export type AppStore = typeof store;
 export type RootState = ReturnType<AppStore['getState']>;
