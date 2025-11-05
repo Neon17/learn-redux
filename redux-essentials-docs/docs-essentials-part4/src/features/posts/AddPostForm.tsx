@@ -28,7 +28,8 @@ export const AddPostForm = () => {
             title,
             content
         }
-        dispatch(postAdded(newPost));
+        // dispatch(postAdded(newPost));
+        dispatch(postAdded(title, content));
 
         console.log('Values: ', { title, content });
         e.currentTarget.reset();
