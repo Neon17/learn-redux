@@ -4,12 +4,15 @@ import { createSlice, nanoid, PayloadAction } from "@reduxjs/toolkit";
 export interface Post {
     id: string,
     title: string,
-    content: string
+    content: string,
+    user: string
 }
 
+type PostUpdate = Pick<Post, 'id' | 'title' | 'content'>
+
 const initialState: Post[] = [
-    { id: "1", title: 'First Post', content: 'This is the first post' },
-    { id: "2", title: 'Second Post', content: 'This is the second post' }
+    { id: "1", title: 'First Post', content: 'This is the first post' , user: '0'},
+    { id: "2", title: 'Second Post', content: 'This is the second post', user: '2' }
 ]
 
 const postsSlice = createSlice({
@@ -20,17 +23,18 @@ const postsSlice = createSlice({
             reducer: (state: Post[], action: PayloadAction<Post>) => {
                 state.push(action.payload);
             },
-            prepare: (title: string, content: string) => {
+            prepare: (title: string, content: string, userId: string) => {
                 return {
                     payload: {
                         id: nanoid(),
                         title,
-                        content
+                        content,
+                        user: userId
                     }
                 }
             }
         },
-        postUpdated: (state: Post[], action: PayloadAction<Post>) => {
+        postUpdated: (state: Post[], action: PayloadAction<PostUpdate>) => {
             const { id, title, content } = action.payload;
             const existingPost = state.find(post => post.id === id)
             if (existingPost) {
